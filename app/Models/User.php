@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'image_path'
     ];
 
     /**
@@ -41,4 +42,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function song()
+    {
+        return $this->belongsToMany(Song::class)->using(Comment::class);
+    }
+
+    public function userMusicList()
+    {
+        return $this->hasMany(UserMusicList::class);
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
 }
