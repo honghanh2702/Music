@@ -24,7 +24,6 @@ class SongFactory extends Factory
         return [
             'name' => $this->faker->sentence($nbWords = 6, $variableNbWords = true),
             'song_path' => 'storage/song/song/late-night.mp3',
-            'release_date',
             'category_id' => $this->faker->numberBetween(1, 20),
             'user_id' => $this->faker->numberBetween(1, 20),
             'image_path' => '/storage/song/image/matcha.jpg'
